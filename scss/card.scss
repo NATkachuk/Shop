@@ -1,0 +1,74 @@
+@import './base/mixins';
+@import './base/reset';
+@import './base/vars';
+
+body {
+    .header {
+        @include flex(row, space-around, center, 0);
+        width: 100%;
+        .nav {
+            &__list {
+                @include flex(row, flex-start, center, 20px);
+            }
+            &__item {
+                @include flex(row, flex-start, center, 0);
+                list-style-type: none;
+            }
+            &__link {
+                color: $main-color;
+                text-decoration: none;
+                &-img {
+                    width: 5%;
+                }
+            }
+        }
+        &-buy {
+            width: 7%;
+            &__img {
+                width: 40%;
+            }
+        }
+    }
+    .main {
+        .section1 {
+            padding: 30px;
+            &__title {
+                font-size: 32px;
+            }
+            .card-product-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 30px;
+                margin-top: 30px;
+                .product-wrap {
+                    .card {
+                        @include flex(column, flex-start, center, 20px);
+                        border: 2px solid $main-color;
+                        padding: 40px;
+                        width: 700px;
+                        &__body {
+                            @include flex(column, flex-start, flex-start, 10px);
+                        }
+                        &__img {
+                            width: 50%;
+                            height: 200px;
+                            object-fit: cover;
+                        }
+                        &__link {
+                            color: $second-color;
+                            background-color: $main-color;
+                            padding: 12px;
+                            border-radius: 5px;
+                        }
+                        .green-btn {
+                            background-color: $third-color;
+                        }
+                        &__text {
+                            width: 40%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
